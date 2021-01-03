@@ -37,7 +37,7 @@ minikube start — driver=virtualbox
 ```
 eval $(minikube docker-env)
 ```
-4. Move to the directory where the Dockerfile resides and run the below command to build the docker image and tag it as you wish.
+4. Move to the directory where the Dockerfile resides, here move to **go-on-k8s/go-rest-api** and run the below command to build the docker image and tag it as you wish.
 ```
 docker build -t mygoapp:latest .
 ```
