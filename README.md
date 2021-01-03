@@ -89,3 +89,5 @@ Hello New Year, 2021
  jishnuks@My-MacBook-Air  ~                                                                                                                                ✔  5690  21:58:55
 
  ```
+# Kubernetes Manifests
+All the k8s manifest files are kept in the repository for referance. This includes manifests that are used to create persistent volume for MySQL, persistent volume claim, MySQL configmap for initializing the database, MySQL and GO App deployment. 
