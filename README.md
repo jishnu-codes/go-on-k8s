@@ -10,7 +10,7 @@ In order to run and test the App on your local machine we need the below tools i
 1. Install VirtualBox on your local machine which is necessary for running minikube, feel free to skip the steps if you are already having minikube instaleld and running. Refer the link below for VirtualBox downloads: 
 https://www.virtualbox.org/wiki/Downloads
 
-2.Download and install docker desktop as we are using docker environment set up to run k8s and test the application, follow the link below for the same.
+2. Download and install docker desktop as we are using docker environment set up to run k8s and test the application, follow the link below for the same.
 https://docs.docker.com/desktop/
 
 3. Download and install the kubectl tool which helps to communicate with the cluster, follow the link below to get more information.
