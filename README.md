@@ -18,4 +18,3 @@ https://kubernetes.io/docs/tasks/tools/
 
 4. Download and install helm which is a package manager for k8s and helps to make the deployment of apps on kubernetes easy. Install helm from the below link.
 https://helm.sh/docs/intro/install/
-
