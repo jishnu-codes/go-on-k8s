@@ -91,3 +91,6 @@ Hello New Year, 2021
  ```
 # Kubernetes Manifests
 All the k8s manifest files are kept in the repository for referance. This includes manifests that are used to create persistent volume for MySQL, persistent volume claim, MySQL configmap for initializing the database, MySQL and GO App deployment. 
+
+# Inspiration
+After gained some operational knowledge on k8s, operators has been one of the topics that took the attention. Learning Go is always helpful in the journey of kubernetes experiments, decided to learn it by doing real tasks, REST-API apps are best to start with. 
