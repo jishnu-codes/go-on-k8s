@@ -61,13 +61,25 @@ helm install goapp .
 ```
 minikube service goapp --url
 ```
-9. According to the app, the route `hostname/hello` will fetch something from the datasbase. Use the command below to test the application using a curl command, assuming that the output from the above command is `http://192.168.99.106:30374`:
+9. According to the app, the route `hostname/hello` will fetch something from the datasbase. Use the command below to test the application using a curl command.
 ```
-curl http://192.168.99.106:30374/hello
+curl http://<host-IP-address>:nodePort/hello
 ```
 10. The desired output is shown below, provided the data inserted into the database is as per mysql-init-config.yaml under MySQL helmchart templates:
 ```
- jishnuks@My-MacBook-Air  ~  curl http://192.168.99.106:30374/hello                                                                                        ✔  5307  10:41:48
+ jishnuks@My-MacBook-Air  ~  kubectl get pods                                                                                                              ✔  5686  21:58:33
+NAME                     READY   STATUS    RESTARTS   AGE
+goapp-788fcbbd49-24pmk   1/1     Running   0          24m
+mysql-6fcc759df8-9w2w9   1/1     Running   0          25m
+ jishnuks@My-MacBook-Air  ~  kubectl get svc                                                                                                               ✔  5687  21:58:39
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+db-service   ClusterIP   10.96.117.228   <none>        3306/TCP         25m
+goapp        NodePort    10.101.188.16   <none>        8080:32616/TCP   24m
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          4h
+ jishnuks@My-MacBook-Air  ~  minikube service goapp --url                                                                                                  ✔  5688  21:58:43
+http://192.168.99.108:32616
+ jishnuks@My-MacBook-Air  ~  curl http://192.168.99.108:32616/hello                                                                                        ✔  5689  21:58:51
 Hello New Year, 2021
- jishnuks@My-MacBook-Air  ~ 
+ jishnuks@My-MacBook-Air  ~                                                                                                                                ✔  5690  21:58:55
+
  ```
