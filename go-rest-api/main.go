@@ -23,7 +23,6 @@ func main() {
 	dbname := os.Getenv("DBNAME")
 
 	// Initalize the sql.DB connection and assign the same to the global variable
-	//models.DB, err = sql.Open("mysql", "root:mypassword@tcp(127.0.0.1:3306)/greeting")
 	//Taking the values from the configmap and secret implemented via kubernetes objects
 	models.DB, err = sql.Open("mysql", fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", username, password, host, port, dbname))
 	if err != nil {
