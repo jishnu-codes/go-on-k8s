@@ -38,12 +38,12 @@ docker build -t mygoapp:latest .
 5. Now that you have the docker image to run on k8s, the application uses MySQL to serve the requests coming to it as the data being fetched from the database. The kubernetes manifests includes all the required YAML files to deploy the app. It also has the helmchart to make the deployment easy and automated. 
 
 # Creating the secret for MySQL: 
-When deploy the MySQL container, the root password must be passed to it in order to initialize the datbase. This can be done in two ways. 
+When deploy the MySQL container, the root password must be passed to it in order to initialize the datbase. This can be done by creating a secret for MySQL. 
 a) Create the secret manually and pass it as environment variable to the container of MySQL. Use the below kubectl command to achieve the same:
 ```
 kubectl create secret generic mysql-pass --from-literal=password=<desired-password>
 ```
-b) Keep the secret yaml file inside MySQL helmchart that contains the encoded MySQL root password and automatically deploy it when helm install command runs. 
+Another way of doing it is keeping the secret yaml file inside MySQL helmchart that contains the encoded MySQL root password and automatically deploy it when helm install command runs. 
 
 Choose either of the above methods, here the chart creates the secret and pass it to the MySQL container as env variable. The same will be used by the app container to connect to the database while initializing the app container.
 
