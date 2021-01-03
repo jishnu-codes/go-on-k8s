@@ -55,6 +55,9 @@ One other method that can work is encrypting the secret files using **gitcrypt**
 
 Choose either of the above methods, here the chart creates the secret and pass it to the MySQL container as env variable. The same will be used by the app container to connect to the database while initializing the app container.
 
+# MySQL initialization
+When the MySQL docker container is being created, it would trigger the file **go-on-k8s/helmcharts/mysql/templates/mysql-init-config.yaml**. This will create the database and table, it will also add values into it using the initdb.sql statements given in the file.
+
 6. Move to /helmcharts/mysql directory and run the command below to install MySQL, it will be having a persitent volume taken from the host machine also a claim bounded to it. 
 ```
 helm install mysql . 
