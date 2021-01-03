@@ -4,6 +4,12 @@ This repository basically helps you to deploy an App written in Go to recieve an
 # Overview
 The App which is written in Go will create a web server that listens to a specified port and serve the requests coming to it depends on the routing added to the application. The App here is a containerized one and it would listen to the port 8080 in the container, when the path http://hostname:8080/hello is requested, it will fetch some data from the database associated with the application and will send it as the response. Note that the URL changes depends how we expose the app to the outside world or within kubernetes itself.
 
+# Technologies
+* minikube version v0.27.0
+* Helm version v3.2.4
+* Docker engine version 17.12.1-ce
+* go version go1.15.1 darwin/amd64
+
 # Prerequisites
 In order to run and test the App on your local machine we need the below tools installed on your local machine depends on your Operating System flavor.
 
@@ -16,7 +22,7 @@ In order to run and test the App on your local machine we need the below tools i
 4. Download and install helm which is a package manager for k8s and helps to make the deployment of apps on kubernetes easy. Install helm from the below link. 
 https://helm.sh/docs/intro/install/
 
-# Running the App
+# Installation
 The repository contains all the necessary app files, kubernetes manisfests, helmcharts and Dockerfile to make the deployment easy. The Dockerfile will build and package the application will give us the required docker image to run on kubernetes. It's a multi stage Dockerfile which actually reduces the complexity and size of the final image. Follow the steps below to build the docker image and run the app on kubernetes environment powered by minikube. 
 
 1. Open the terminal and run the below command to clone the repository to the local machine. 
