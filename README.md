@@ -29,6 +29,8 @@ minikube start — driver=virtualbox
 ```
 3. Run the below command so that the minikube will be able to use the Docker daemon inside the minikube instance. This is required because we are using all development operations locally and this enables to load the docker image from the local machine itself. The `imagePullPolicy: Never` in the deployment manifest of App triggers the same. 
 ```
+eval $(minikube docker-env)
+```
 4. Move to the directory where the Dockerfile resides and run the below command to build the docker image and tag it as you wish.
 ```
 docker build -t mygoapp:latest .
