@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-config
+data:
+  initdb.sql: |
+    create database greeting;
+    use greeting;
+    CREATE TABLE mygreeting (Greeting varchar(255), Year int);
+    INSERT INTO mygreeting (Greeting, Year) VALUES ('Hello New Year', '2021');
