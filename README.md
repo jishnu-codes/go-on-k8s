@@ -43,7 +43,9 @@ a) Create the secret manually and pass it as environment variable to the contain
 ```
 kubectl create secret generic mysql-pass --from-literal=password=<desired-password>
 ```
-Another way of doing it is keeping the secret yaml file inside MySQL helmchart that contains the encoded MySQL root password and automatically deploy it when helm install command runs. 
+Another way of doing it is keeping the secret yaml file inside MySQL helmchart that contains the encoded MySQL root password and automatically deploy it when helm install command runs. This is still note a secured method as anyone who is having access to the repo/secret.yaml file can decode the same. The other methods are getting extra plugins for helm to get this done, for instance helm secret plugin etc. 
+
+One other method that can work is encrypting the secret files using **gitcrypt** , this all secret files and sensitive data can be encrypted using a GPG key. We push the files to the repository encrypted and while retrieving files, this get decrypted. This is a very secured channel for handling sensitive data.
 
 Choose either of the above methods, here the chart creates the secret and pass it to the MySQL container as env variable. The same will be used by the app container to connect to the database while initializing the app container.
 
